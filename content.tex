@@ -81,7 +81,7 @@ By modifying and testing different resolution times we were able to increase the
 %%%%%%%%%%%%%%%%% TASK 3 %%%
 \subsection{VSWR measurement}
 To characterise three different dipole antennas and their efficiency, we measured the Voltage Standing Wave Ratio (VSWR). The SA itself can not measure the VSWR, but by connecting a VSWR-bridge, which essentially feeds the reflected power back to one of the SA's input, this measurement is made possible.\\
-By setting the SA to the \textit{VSWR-measurement}-mode, where the SA automatically detects the connected VSWR device and creating a signal with the SA's build-in Signal Generator, the general setup for this measurement was done. The VSWR-bridge then had to be calibrated by using the calibration function of the SA (\textbf{MEA}->\textbf{Measure Setup}->\textbf{Calibration Open}). The calibration essentially measures the internal impedances, so that after connecting an antenna the internal impedances will not show up in the measurement.\\
+By setting the SA to the \textit{VSWR-measurement}-mode, where the SA automatically detects the connected VSWR device and creating a signal with the SA's build-in Signal Generator, the general setup for this measurement was done. The VSWR-bridge then had to be calibrated by using the calibration function of the SA. The calibration essentially measures the internal impedances, so that after connecting an antenna the internal impedances will not show up in the measurement.\\
 
 
 
@@ -131,7 +131,7 @@ The received power plotted vs. the distance can be seen in \cref{fig:omni}
 	\caption{Received Power vs. Distance}
 	\label{fig:omni}
 \end{figure}
-An observation we made, is that the received power fluctuates quite a lot. We expected the power to decrease more or less linearly, but the measured data looks very scattered. However, using a least-square linear approximation to the measured data, shows a definite trend towards decreasing power with increased distance.
+An observation we made, is that the received power fluctuates quite a lot. We expected the power to decrease more or less linearly, but the measured data looks very scattered. However, using a least-square linear approximation to the measured data, one can see a trend towards decreasing power with increased distance - which is what we expected.
 The fluctuating power might be explained by having obstacles, e.g. multi-path effects, since the room we performed all the experiments, was not shielded. Also we noticed high variations in the measured power, depending where in the room we were standing - even when not standing in line-of-sight between transmitter and receiver.
 Another reason might be, that the distance measurement was not as precise as we would have wished, since we used an ordinary table and a tape measure to measure the distance from receiving antenna to the transmitter.
 
@@ -139,7 +139,10 @@ Another reason might be, that the distance measurement was not as precise as we 
 
 
 \subsection{Antenna Gain Pattern}
-The final experiment in this laboratory was the measurement of a high-precision high-gain antenna, the Hyperlog 7025.
+The final experiment in this laboratory was the measurement of a high-precision high-gain antenna, the Hyperlog 7025 - in particular the radiation pattern in different directions covering a full 360° of the antenna was to be measured.
+This was done by using the same setup as in the measurement of received power vs. distance, but this time the TX output of the SA was used to connect the Hyperlog antenna. Also, we exchanged the receiving antenna with the calibrated antenna, since the Hyperlog antenna is intended for using only frequencies within the range of 700MHz to 2.5 GHz.\\
+Again, as emitting power we chose 0 dB and placed the emitting antenna at a distance of $d = \lambda = 35.7 cm$ from the receiving one.
+The emitting antenna was also placed on a rotatable plate. The received power was then recorded at every 20°-step, until the full 360 degrees were covered. The result was then plotted and can be seen in \cref{fig:hyper}.
 
 \begin{figure}[h!]
     \centering
@@ -151,10 +154,18 @@ The final experiment in this laboratory was the measurement of a high-precision 
     \end{minipage}\hfill
     \begin{minipage}{0.45\textwidth}
 		\includegraphics[width=\textwidth]{images/hyperlog_ds.png}
-		\caption{Pattern according to Data sheet}
+		\caption{Pattern according to data sheet\protect\footnotemark}
 		\label{fig:hyper_sheet}
     \end{minipage}
 \end{figure}
+
+\footnotetext{\href{http://www.aaronia.com/Datasheets/Antennas/Directional_Antenna_Series_Aaronia_HyperLOG7000.pdf}{Source: device datasheet at \texttt{http://www.aaronia.com}}}
+
+\Cref{fig:hyper} shows a quite shapeless blob that is more or less equally sized in every particular direction. This is very much the opposite of what we had expected, since a high-gain antenna is very directional. This expectation matches the official radiation pattern that is provided in the data sheet of the Hyperlog antenna (c.f. \cref{fig:hyper_sheet}). However, knowing the shape of the real we can see, that our measured data shows particular features of the real radiation pattern, especially a higher gain respectively a broader lobe in 0° direction\footnote{note: the measured data is plotted with a 180° shift compared to the plot from the data sheet!} - and a lower amplitude on the "sides" of the antenna (-90° and 90°).
+
+These very strong deviations from the expected outcome can partially be explained by the quite poor measurement technique - in particular the turntable we used was not very stable and not best suited for the measurement since it did not provide any mechanisms to fix the antenna properly. This could have resulted in miss-pointing the antenna, leading to a poor signal reception of the receiving antenna -  we reasoned this issue as being the one most harmful for the measurement. Also, due to other emitting devices such as cell phones, computers, etc. the measurement could have been falsified. Multi-Path effect could also play a role in falsifying the measurement - especially during the pointing angles of about 180°, since the emitted Power could have been easily reflected towards the SA by the wall and other obstacles that were in the room.
+
+However, a slight correlation between expected and real outcome can be seen, especially the slightly larger lobe towards the 0° pointing angle.
 
 
 \section{Conclusion}
