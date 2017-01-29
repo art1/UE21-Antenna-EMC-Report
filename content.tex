@@ -1,16 +1,15 @@
 %%%%%%%%%%%%%%%%% Introduction to the Assignment %%%
 \section{Introduction}
-To understand different antenna characteristics this laboratory work focused on working with a spectrum analyser and different antennas. After a theoretical part introducing antenna parameters, the practical work was divided in three different setups.\\
-First, a general understanding of a spectrum analyser is gained by testing different functions and using demodulation techniques on different signals. The second part puts the emphasis on the transmission line between a transmitting and receiving antenna and last part shows antenna radiation patterns and their dependence on distance and angle.
+To understand different antenna characteristics this laboratory work focused on working with a spectrum analyser and different antennas. After a theoretical part introducing antenna parameters, the practical work was divided into four different setups.\\
+First, a general understanding of a spectrum analyser is gained by testing different functions and using demodulation techniques on different signals. The second part puts the emphasis on the transmission line between a transmitting and receiving antenna. The third part illustrates how to calculate the Gain of an uncalibrated antenna by using a calibrated one, and the last part shows antenna radiation patterns and their dependence on distance and angle.
 
 
 %%%%%%%%%%%%%%%%% TASK 1 %%%
 \section{Theoretical part}
 \label{sec:theory}
-Assuming general EM-wave propagation is well known and understood, this theoretical part focuses on the most important antenna features and parameters for this specific laboratory work.
+Assuming EM-wave propagation is well known and understood, this theoretical part focuses on the most important antenna features and parameters for this specific laboratory work.
 
 \subsection{Modulation}
-In general, modulation
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth/2 + 3em]{images/modulation.jpg}
@@ -19,9 +18,12 @@ In general, modulation
 \end{figure}
 \footnotetext{Source: \href{http://www.hill2dot0.com/wiki/images/a/af/G0612_Carrier-Modulation-Te.jpg}{\texttt{http://www.hill2dot0.com}}}
 
+In general, modulation is used to add data - analog or digital - onto a carrier signal to be able to transmit for example voice or data bits. This can be done using multiple different techniques, where one has to differentiate between analog and digital modulation techniques. The most common techniques in the analog domain (digital techniques are not relevant for this particular laboratory report) are FM and AM modulation. FM stands for Frequency Modulation and describes the modulation of the frequency of the carrier signal to convey the input signal where as AM stands for Amplitude Modulation. AM changes the amplitude of the carrier signal according to the input signal, so that the carrier signal will be shaped according to the input signal.
+\Cref{fig:mod} illustrates both these techniques.
+
 \subsection{Antenna Gain and Impedance}
 Antenna Gain is closely related to the antenna's directivity, means it corresponds to how concentrated the radiated power is in one specific direction. 
-Gain, however, is the product of the antennas efficiency and the directivity, and is usually measured in direction of the highest
+Gain, however, is the product of the antennas efficiency and the directivity, and is usually measured in direction where the most power is radiated.
 To maximise the radiated power by an antenna, it is important to "match" the impedance of the antenna to the electric circuit, since antennas are resonant devices, e.g. a part of the input power at the antenna will be reflected, which can introduce a whole range of problems, especially when high power is transmitted/reflected back to the transmitter. This reflected power can be minimised by so-called impedance matching, where the impedance of an antenna relates the voltage and current at the input of the antenna.\\
 
 \subsection{VSWR}
