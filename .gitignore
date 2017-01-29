@@ -88,3 +88,8 @@ Temporary Items
 *.vrb
 *.xdy
 *.tdo
+
+
+# working docs
+docs/EMC/
+docs/TP2.docx
